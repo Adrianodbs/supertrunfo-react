@@ -48,7 +48,6 @@ export const Result = styled.div`
   height: 30px;
   padding: 10px;
 `
-export const Score = styled.div``
-export const Scoreboard = styled.div``
+
 export const FinalScore = styled.div``
 export const RestartButton = styled.div``

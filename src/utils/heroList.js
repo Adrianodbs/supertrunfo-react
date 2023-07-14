@@ -1,6 +1,6 @@
 export const heroList = [
   {
-    image: '../../public/img/aatrox.png',
+    image: './img/aatrox.png',
     name: 'Aatrox',
     subtitle: 'A espada Darkin',
     strong: 21,
@@ -8,7 +8,7 @@ export const heroList = [
     defense: 23
   },
   {
-    image: '../../public/img/ashe.png',
+    image: './img/ashe.png',
     name: 'Ashe',
     subtitle: 'A arqueira do gelo',
     strong: 26,
@@ -16,7 +16,7 @@ export const heroList = [
     defense: 14
   },
   {
-    image: '../../public/img/bardo.png',
+    image: './img/bardo.png',
     name: 'Bardo',
     subtitle: 'O protetor andarilho',
     strong: 18,
@@ -24,7 +24,7 @@ export const heroList = [
     defense: 20
   },
   {
-    image: '../../public/img/darius.png',
+    image: './img/darius.png',
     name: 'Darius',
     subtitle: 'A mão de Noxus',
     strong: 22,
@@ -32,7 +32,7 @@ export const heroList = [
     defense: 21
   },
   {
-    image: '../../public/img/draven.png',
+    image: './img/draven.png',
     name: 'Draven',
     subtitle: 'O carrasco de Noxus',
     strong: 29,
@@ -40,7 +40,7 @@ export const heroList = [
     defense: 14
   },
   {
-    image: '../../public/img/jinx.png',
+    image: './img/jinx.png',
     name: 'Jinx',
     subtitle: 'O gatilho desenfreado',
     strong: 28,
@@ -48,7 +48,7 @@ export const heroList = [
     defense: 15
   },
   {
-    image: '../../public/img/kayn.png',
+    image: './img/kayn.png',
     name: 'Kayn',
     subtitle: 'O ceifador das sombras',
     strong: 22,
@@ -56,7 +56,7 @@ export const heroList = [
     defense: 20
   },
   {
-    image: '../../public/img/leesin.png',
+    image: './img/leesin.png',
     name: 'Lee Sin',
     subtitle: 'O monge cego',
     strong: 21,
@@ -64,7 +64,7 @@ export const heroList = [
     defense: 22
   },
   {
-    image: '../../public/img/leona.png',
+    image: './img/leona.png',
     name: 'Leona',
     subtitle: 'A alvorada radiante',
     strong: 18,
@@ -72,7 +72,7 @@ export const heroList = [
     defense: 28
   },
   {
-    image: '../../public/img/lulu.png',
+    image: './img/lulu.png',
     name: 'Lulu',
     subtitle: 'A fada feiticeira',
     strong: 20,
@@ -80,7 +80,7 @@ export const heroList = [
     defense: 24
   },
   {
-    image: '../../public/img/nami.png',
+    image: './img/nami.png',
     name: 'Nami',
     subtitle: 'A conjuradora das mares',
     strong: 20,
@@ -88,7 +88,7 @@ export const heroList = [
     defense: 22
   },
   {
-    image: '../../public/img/nautilus.png',
+    image: './img/nautilus.png',
     name: 'Nautilus',
     subtitle: 'O titã das profundezas',
     strong: 19,
@@ -96,7 +96,7 @@ export const heroList = [
     defense: 29
   },
   {
-    image: '../../public/img/soraka.png',
+    image: './img/soraka.png',
     name: 'Soraka',
     subtitle: 'A filha das estrelas',
     strong: 16,
@@ -104,7 +104,7 @@ export const heroList = [
     defense: 20
   },
   {
-    image: '../../public/img/thresh.png',
+    image: './img/thresh.png',
     name: 'Thresh',
     subtitle: 'O guardião das correntes',
     strong: 19,
@@ -112,7 +112,7 @@ export const heroList = [
     defense: 26
   },
   {
-    image: '../../public/img/zed.png',
+    image: './img/zed.png',
     name: 'Zed',
     subtitle: 'O mestre das sobras',
     strong: 27,

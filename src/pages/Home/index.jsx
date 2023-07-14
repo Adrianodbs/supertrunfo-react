@@ -4,6 +4,7 @@ import * as C from './style'
 import { heroList } from '../../utils/heroList'
 import blankImage from '../../assets/interrogacao.png'
 import cruz from '../../assets/cruz.png'
+import Score from '../../components/Score'
 
 const blankCard = {
   name: '?????',
@@ -89,14 +90,7 @@ export default function Home() {
     <C.Container>
       <C.Content>
         <h1>Escolha um atributo da sua carta para batalhar:</h1>
-        <C.Scoreboard>
-          <C.Score>
-            Jogador: <span>{playerScore}</span>
-          </C.Score>
-          <C.Score>
-            Computador: <span>{computerScore}</span>
-          </C.Score>
-        </C.Scoreboard>
+        <Score playerScore={playerScore} computerScore={computerScore} />
         {!gameOver ? (
           <C.Table>
             {card1 && (
