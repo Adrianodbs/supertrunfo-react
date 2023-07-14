@@ -29,3 +29,15 @@ export const Content = styled.div`
     font-size: 25px;
   }
 `
+
+export const Table = styled.div`
+  display: flex;
+  margin: 10px;
+  gap: 20px;
+`
+
+export const Result = styled.div`
+  height: 30px;
+  padding: 10px;
+`
+export const Attributes = styled.div``
