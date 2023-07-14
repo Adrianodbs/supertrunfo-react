@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import * as C from './style'
 
 export default function Card({
@@ -15,7 +15,7 @@ export default function Card({
       <C.Hero>
         <h3>{name}</h3>
         <C.Image>
-          <img src={image} alt="Hero" />
+          <img src={image} alt={name} />
         </C.Image>
       </C.Hero>
       <C.Info>
