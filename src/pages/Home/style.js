@@ -27,17 +27,28 @@ export const Content = styled.div`
   h1 {
     color: #fff;
     font-size: 25px;
+    margin-bottom: 20px;
   }
 `
 
 export const Table = styled.div`
   display: flex;
+  justify-content: space-around;
+  align-items: center;
   margin: 10px;
   gap: 20px;
+
+  .versus {
+    width: 80px;
+    height: 80px;
+  }
 `
 
 export const Result = styled.div`
   height: 30px;
   padding: 10px;
 `
-export const Attributes = styled.div``
+export const Score = styled.div``
+export const Scoreboard = styled.div``
+export const FinalScore = styled.div``
+export const RestartButton = styled.div``
