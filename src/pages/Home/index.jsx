@@ -71,12 +71,12 @@ export default function Home() {
 
     setTimeout(() => {
       setRound(prevRound => prevRound + 1)
-      if (round >= 3) {
+      if (round >= 5) {
         setGameOver(true)
       } else {
         selectRandomCards()
       }
-    }, 3000)
+    }, 2000)
   }
 
   const handleRestartGame = () => {
@@ -89,8 +89,12 @@ export default function Home() {
   return (
     <C.Container>
       <C.Content>
-        <h1>Escolha um atributo da sua carta para batalhar:</h1>
-        <Score playerScore={playerScore} computerScore={computerScore} />
+        {!gameOver && round <= 5 && (
+          <>
+            <h1>Escolha um atributo da sua carta para batalhar:</h1>
+            <Score playerScore={playerScore} computerScore={computerScore} />
+          </>
+        )}
         {!gameOver ? (
           <C.Table>
             {card1 && (
@@ -103,8 +107,8 @@ export default function Home() {
                 }
               />
             )}
-            {round <= 3 && <img src={cruz} alt="Versus" className="versus" />}
-            {card2 && round <= 3 && (
+            {round <= 5 && <img src={cruz} alt="Versus" className="versus" />}
+            {card2 && round <= 5 && (
               <Card
                 {...card2}
                 onClick={
@@ -124,7 +128,7 @@ export default function Home() {
             </C.RestartButton>
           </C.Result>
         )}
-        {!gameOver && round <= 3 && <C.Result>{result}</C.Result>}
+        {!gameOver && round <= 5 && <C.Result>{result}</C.Result>}
       </C.Content>
     </C.Container>
   )

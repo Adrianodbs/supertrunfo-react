@@ -47,7 +47,23 @@ export const Table = styled.div`
 export const Result = styled.div`
   height: 30px;
   padding: 10px;
+  font-size: 20px;
+  font-weight: 500;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
 `
 
-export const FinalScore = styled.div``
-export const RestartButton = styled.div``
+export const RestartButton = styled.button`
+  border: none;
+  cursor: pointer;
+  padding: 8px 16px;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #5359f9;
+  font-size: 20px;
+  font-weight: bold;
+`
