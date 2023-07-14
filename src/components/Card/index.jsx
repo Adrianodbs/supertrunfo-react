@@ -1,12 +1,14 @@
 import * as C from './style'
-import heroCard from '../../../public/img/hero1.jpg'
+import heroCard from '../../../public/img/nautilus.png'
 
 export default function Card() {
   return (
     <C.Card>
       <C.Hero>
         <h3>Personagem teste</h3>
-        <img src={heroCard} alt="Hero" />
+        <C.Image>
+          <img src={heroCard} alt="Hero" />
+        </C.Image>
       </C.Hero>
       <C.Info>
         <h4>Lutador</h4>

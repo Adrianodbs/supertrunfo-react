@@ -33,11 +33,19 @@ export const Hero = styled.div`
     font-weight: 400;
     padding: 4px 0;
   }
+`
+
+export const Image = styled.div`
+  width: 100%;
+  height: 80%;
+  background-color: #5359f9;
+  border-radius: 4px;
+  padding: 8px;
 
   img {
     width: 100%;
-    height: 160px;
-    object-fit: cover;
+    height: 100%;
+    object-fit: contain;
   }
 `
 
