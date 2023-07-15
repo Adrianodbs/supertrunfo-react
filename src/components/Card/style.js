@@ -74,4 +74,9 @@ export const Info = styled.div`
     padding: 2px 4px;
     cursor: pointer;
   }
+
+  p.disabled {
+    background-color: #f2f2f2;
+    cursor: not-allowed;
+  }
 `

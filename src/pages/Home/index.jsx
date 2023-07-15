@@ -15,6 +15,8 @@ const blankCard = {
   defense: '??'
 }
 
+const attributes = ['strong', 'intelligence', 'defense']
+
 export default function Home() {
   const [card1, setCard1] = useState(null)
   const [card2, setCard2] = useState(blankCard)
@@ -23,7 +25,7 @@ export default function Home() {
   const [playerScore, setPlayerScore] = useState(0)
   const [computerScore, setComputerScore] = useState(0)
   const [round, setRound] = useState(1)
-  const [attributeDisabled, setAttributeDisabled] = useState(false)
+  const [disabledAttributes, setDisabledAttributes] = useState([])
   const [gameOver, setGameOver] = useState(false)
 
   useEffect(() => {
@@ -32,29 +34,31 @@ export default function Home() {
 
   const selectRandomCards = () => {
     const randomIndex1 = Math.floor(Math.random() * heroList.length)
-    let randomIndex2
-    do {
-      randomIndex2 = Math.floor(Math.random() * heroList.length)
-    } while (randomIndex2 === randomIndex1)
+    const card1 = heroList[randomIndex1]
 
-    setCard1(heroList[randomIndex1])
+    let updatedHeroList = [...heroList]
+    updatedHeroList.splice(randomIndex1, 1)
+
+    setCard1(card1)
     setCard2(blankCard)
     setSelectedAttribute(null)
     setResult(null)
-    setAttributeDisabled(false)
     setGameOver(false)
   }
 
   const handleAttributeSelection = attribute => {
     setSelectedAttribute(attribute)
-    setAttributeDisabled(true)
+    setDisabledAttributes(prevDisabledAttributes => [
+      ...prevDisabledAttributes,
+      attribute
+    ])
 
     const randomIndex = Math.floor(Math.random() * heroList.length)
     const randomCard = heroList[randomIndex]
 
     const computerCard = {
       ...randomCard,
-      image: randomCard.image || blankCard.image
+      image: randomCard.image ? randomCard.image : blankCard.image
     }
 
     setCard2(computerCard)
@@ -71,7 +75,7 @@ export default function Home() {
 
     setTimeout(() => {
       setRound(prevRound => prevRound + 1)
-      if (round >= 5) {
+      if (round >= 3) {
         setGameOver(true)
       } else {
         selectRandomCards()
@@ -83,13 +87,22 @@ export default function Home() {
     setPlayerScore(0)
     setComputerScore(0)
     setRound(1)
+    setDisabledAttributes([])
     selectRandomCards()
+  }
+
+  const isAttributeDisabled = attribute => {
+    return disabledAttributes.includes(attribute)
+  }
+
+  const getAvailableAttributes = () => {
+    return attributes.filter(attribute => !isAttributeDisabled(attribute))
   }
 
   return (
     <C.Container>
       <C.Content>
-        {!gameOver && round <= 5 && (
+        {!gameOver && round <= 3 && (
           <>
             <h1>Escolha um atributo da sua carta para batalhar:</h1>
             <Score playerScore={playerScore} computerScore={computerScore} />
@@ -100,22 +113,16 @@ export default function Home() {
             {card1 && (
               <Card
                 {...card1}
-                onClick={
-                  attributeDisabled
-                    ? null
-                    : attribute => handleAttributeSelection(attribute)
-                }
+                onClick={attribute => handleAttributeSelection(attribute)}
+                disabledAttributes={disabledAttributes}
               />
             )}
-            {round <= 5 && <img src={cruz} alt="Versus" className="versus" />}
-            {card2 && round <= 5 && (
+            {round <= 3 && <img src={cruz} alt="Versus" className="versus" />}
+            {card2 && round <= 3 && (
               <Card
                 {...card2}
-                onClick={
-                  attributeDisabled
-                    ? null
-                    : attribute => handleAttributeSelection(attribute)
-                }
+                onClick={attribute => handleAttributeSelection(attribute)}
+                disabledAttributes={disabledAttributes}
                 showImage={!selectedAttribute}
               />
             )}
@@ -128,7 +135,7 @@ export default function Home() {
             </C.RestartButton>
           </C.Result>
         )}
-        {!gameOver && round <= 5 && <C.Result>{result}</C.Result>}
+        {!gameOver && round <= 3 && <C.Result>{result}</C.Result>}
       </C.Content>
     </C.Container>
   )

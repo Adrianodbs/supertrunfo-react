@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import * as C from './style'
 
 export default function Card({
@@ -8,8 +8,19 @@ export default function Card({
   strong,
   intelligence,
   defense,
-  onClick
+  onClick,
+  disabledAttributes
 }) {
+  const isAttributeDisabled = attribute => {
+    return disabledAttributes.includes(attribute)
+  }
+
+  const handleAttributeClick = attribute => {
+    if (!isAttributeDisabled(attribute)) {
+      onClick(attribute)
+    }
+  }
+
   return (
     <C.Card>
       <C.Hero>
@@ -20,11 +31,24 @@ export default function Card({
       </C.Hero>
       <C.Info>
         <h4>{subtitle}</h4>
-        <p onClick={() => onClick('strong')}>Força: {strong}</p>
-        <p onClick={() => onClick('intelligence')}>
+        <p
+          onClick={() => handleAttributeClick('strong')}
+          className={isAttributeDisabled('strong') ? 'disabled' : ''}
+        >
+          Força: {strong}
+        </p>
+        <p
+          onClick={() => handleAttributeClick('intelligence')}
+          className={isAttributeDisabled('intelligence') ? 'disabled' : ''}
+        >
           Inteligência: {intelligence}
         </p>
-        <p onClick={() => onClick('defense')}>Defesa: {defense}</p>
+        <p
+          onClick={() => handleAttributeClick('defense')}
+          className={isAttributeDisabled('defense') ? 'disabled' : ''}
+        >
+          Defesa: {defense}
+        </p>
       </C.Info>
     </C.Card>
   )
