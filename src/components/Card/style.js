@@ -15,6 +15,20 @@ export const Card = styled.div`
   box-shadow: -10px 11px 0px 1px rgba(0, 0, 0, 1);
   -webkit-box-shadow: -10px 11px 0px 1px rgba(0, 0, 0, 1);
   -moz-box-shadow: -10px 11px 0px 1px rgba(0, 0, 0, 1);
+
+  @media screen and (max-width: 900px) {
+    width: 200px;
+    height: 300px;
+  }
+
+  @media screen and (max-width: 620px) {
+    width: 140px;
+    height: 250px;
+  }
+
+  @media screen and (max-width: 425px) {
+    width: 110px;
+  }
 `
 
 export const Hero = styled.div`
@@ -32,6 +46,10 @@ export const Hero = styled.div`
     font-size: 16px;
     font-weight: 400;
     padding: 4px 0;
+
+    @media screen and (max-width: 620px) {
+      font-size: 14 px;
+    }
   }
 `
 
@@ -57,12 +75,14 @@ export const Info = styled.div`
   h4 {
     font-size: 18px;
     margin-bottom: 2px;
-  }
 
-  span {
-    font-size: 14px;
-    font-weight: 500;
-    margin-bottom: 10px;
+    @media screen and (max-width: 620px) {
+      font-size: 12px;
+    }
+
+    @media screen and (max-width: 425px) {
+      font-size: 11px;
+    }
   }
 
   p {
@@ -73,6 +93,15 @@ export const Info = styled.div`
     margin-bottom: 4px;
     padding: 2px 4px;
     cursor: pointer;
+
+    @media screen and (max-width: 620px) {
+      font-size: 12px;
+    }
+
+    @media screen and (max-width: 425px) {
+      font-size: 11px;
+      padding: 1px;
+    }
   }
 
   p.disabled {

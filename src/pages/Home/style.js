@@ -28,6 +28,12 @@ export const Content = styled.div`
     color: #fff;
     font-size: 25px;
     margin-bottom: 20px;
+    text-align: center;
+    width: 100%;
+
+    @media screen and (max-width: 620px) {
+      font-size: 20px;
+    }
   }
 `
 
@@ -38,9 +44,26 @@ export const Table = styled.div`
   margin: 10px;
   gap: 20px;
 
+  @media screen and (max-width: 620px) {
+    gap: 12px;
+  }
+
+  @media screen and (max-width: 425px) {
+    gap: 20px;
+  }
+
   .versus {
     width: 80px;
     height: 80px;
+
+    @media screen and (max-width: 620px) {
+      width: 40px;
+      height: 40px;
+    }
+
+    @media screen and (max-width: 425px) {
+      display: none;
+    }
   }
 `
 
